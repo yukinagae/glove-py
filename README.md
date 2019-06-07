@@ -14,11 +14,31 @@ cd glove-py
 poetry install
 ```
 
+### Download corpus data
+
+```bash
+$ cd data/
+$ wget http://mattmahoney.net/dc/text8.zip
+$ unzip text8.zip
+$ rm text8.zip
+$ ls
+text8
+```
+
+If you want a smaller dataset to play with it, run the below commands.
+
+```bash
+$ cd data/
+$ head -c 1279 text8 > small_text8 # First 1,279 bytes of the original dataset. I think this is small enough and it looks like the end of the sentence.
+$ ls
+small_text8
+```
+
 ## Usage
 
 ```bash
 cd glove-py
-poetry run python main.py
+poetry run python main.py ./data/text8
 ```
 
 ## References
